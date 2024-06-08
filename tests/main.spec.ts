@@ -13,8 +13,7 @@ describe("main.fc contract tests", () => {
     const blockchain = await Blockchain.create();
 
     // Get contract wrapper
-    const MainContract =
-      require(`../${WRAPPERS_FOLDER}/MainContract`).MainContract;
+    const MainContract = require(`../${WRAPPERS_FOLDER}/MainContract.ts`).MainContract;
     const mainContract = blockchain.openContract(
       await MainContract.createFromConfig({}, codeCell)
     );

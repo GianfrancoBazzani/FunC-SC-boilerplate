@@ -12,14 +12,10 @@ import {
 export class MainContract implements Contract {
   constructor(
     readonly address: Address,
-    readonly init?: {
-      code: Cell;
-      data: Cell;
-    }
+    readonly init: { code: Cell; data: Cell }
   ) {}
 
-  static createFromConfig(config: any, code: Cell, workchain = 0) {
-    const data = beginCell().endCell();
+  static createFromConfig(config: any, code: Cell, workchain = 0, data = new Cell()) {
     const init = { code, data };
     const address = contractAddress(workchain, init);
     return new MainContract(address, init);
