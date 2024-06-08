@@ -9,6 +9,12 @@
 ### Commands
 - To install dependencies: `yarn`
 
+### Project structure
+- contracts: contains FunC contracts sources
+- scripts: contains utilities scripts
+- test: contains jest tests for FunC contracts
+- wrappers: wrappers to interact with deployed contracts
+
 ### Compile a specific FunC source
 - Place `<name>.fc` in `contracts` folder
 - Run `yarn compile <main>`
