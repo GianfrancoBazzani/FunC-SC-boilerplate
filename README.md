@@ -17,5 +17,11 @@
 
 ### Compile a specific FunC source
 - Place `<name>.fc` in `contracts` folder
-- Run `yarn compile <main>`
+- Run `yarn compile <name>`
 - If compilation succeeds you will have compilation results as `<name>.compiled.json` inside `build` folder
+
+### Deploy a specific FunC source
+- Select mainnet or testnet in `constants.ts`.
+- Run `yarn compile <name>`
+- Setup a wrapper of the contract in `wrappers` named as `<Name>Contract.ts`
+- Run `yarn deploy <name>`

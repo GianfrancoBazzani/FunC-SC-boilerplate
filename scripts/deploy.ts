@@ -13,7 +13,7 @@ import {
 } from "ton";
 import { mnemonicToWalletKey } from "ton-crypto";
 import { getHttpEndpoint } from "@orbs-network/ton-access";
-import { HEX_ARTIFACTS_FOLDER, WRAPPERS_FOLDER } from "../constants";
+import { HEX_ARTIFACTS_FOLDER, WRAPPERS_FOLDER,NETWORK } from "../constants";
 require("dotenv").config();
 
 // Sanity check
@@ -51,7 +51,7 @@ async function deployScript() {
     workchain: 0,
   });
   // initialize ton rpc client on mainnet
-  const endpoint = await getHttpEndpoint({ network: "mainnet" });
+  const endpoint = await getHttpEndpoint({ network: NETWORK });
   const client = new TonClient({ endpoint });
   const walletContract = await client.open(wallet);
   const walletSender = await walletContract.sender(key.secretKey);
