@@ -15,7 +15,12 @@ export class MainContract implements Contract {
     readonly init: { code: Cell; data: Cell }
   ) {}
 
-  static createFromConfig(config: any, code: Cell, workchain = 0, data = new Cell()) {
+  static createFromConfig(
+    config: any,
+    code: Cell,
+    workchain = 0,
+    data = new Cell()
+  ) {
     const init = { code, data };
     const address = contractAddress(workchain, init);
     return new MainContract(address, init);
@@ -33,10 +38,8 @@ export class MainContract implements Contract {
     });
   }
 
-  // async getData(provider: ContractProvider) {
-  //   const { stack } = await provider.get("get_the_latest_sender", []);
-  //   return {
-  //     recent_sender: stack.readAddress(),
-  //   };
-  // }
+  async getLatestSenderAddress(provider: ContractProvider) {
+    const { stack } = await provider.get("get_latest_sender_address", []);
+    return stack.readAddress();
+  }
 }

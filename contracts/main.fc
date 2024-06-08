@@ -18,7 +18,7 @@
 }
 
 ;; getter for sender_address
-slice get_latest_sendr_address() method_id {
+slice get_latest_sender_address() method_id {
     slice ds = get_data().begin_parse();
     return ds~load_msg_addr();
 }

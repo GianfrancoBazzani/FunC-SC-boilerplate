@@ -9,7 +9,7 @@ import {
   TonClient,
   fromNano,
   toNano,
-  internal,
+
 } from "ton";
 import { mnemonicToWalletKey } from "ton-crypto";
 import { getHttpEndpoint } from "@orbs-network/ton-access";
@@ -40,7 +40,7 @@ async function deployScript() {
   const codeCell = Cell.fromBoc(Buffer.from(hex, "hex"))[0];
   const WrapperName = sourceFileName.charAt(0).toUpperCase() + sourceFileName.slice(1)
   const contractWrapper = require(`../${WRAPPERS_FOLDER}/${WrapperName}Contract.ts`)[`${WrapperName}Contract`];
-  const contractToDeploy = contractWrapper.createFromConfig({}, codeCell); // TODO Make this to compatible with deploy command arguments
+  const contractToDeploy = contractWrapper.createFromConfig({}, codeCell); 
 
   //** Setup deployer wallet */
   // Deploy contract

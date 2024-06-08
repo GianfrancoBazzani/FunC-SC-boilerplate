@@ -13,7 +13,8 @@ describe("main.fc contract tests", () => {
     const blockchain = await Blockchain.create();
 
     // Get contract wrapper
-    const MainContract = require(`../${WRAPPERS_FOLDER}/MainContract.ts`).MainContract;
+    const MainContract =
+      require(`../${WRAPPERS_FOLDER}/MainContract.ts`).MainContract;
     const mainContract = blockchain.openContract(
       await MainContract.createFromConfig({}, codeCell)
     );
@@ -33,5 +34,8 @@ describe("main.fc contract tests", () => {
       to: mainContract.address,
       success: true,
     });
+
+    const latestSenderAddress = await mainContract.getLatestSenderAddress();
+    expect(latestSenderAddress.toString()).toBe(senderWallet.address.toString());
   });
 });
