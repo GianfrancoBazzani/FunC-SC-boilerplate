@@ -674,6 +674,13 @@
   resolved "https://registry.yarnpkg.com/@ton-community/sandbox/-/sandbox-0.11.0.tgz#411eae67c8f7aca07b6ae8e53233f6c3c21fcbe1"
   integrity sha512-3tlSprRBTSu9m0tJTC3cl4MXQep1vfNMPqk9+JAXSRJu9ToEvIUVpqO6MQNkbz9LkKDuOEBs5vyqT37DlKKcWw==
 
+"@ton-community/test-utils@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@ton-community/test-utils/-/test-utils-0.3.0.tgz#44e854cd023123d3cb57df3839730b0bc6dac609"
+  integrity sha512-eCw1c6a0TcKwiYEA4fmzPq+7dJtUx0UFYu+UEoRznIxEOcpEb8Ssjb9yMeiJEzbtUVMCkhEtpztdKt75ngDRWg==
+  dependencies:
+    node-inspect-extracted "^2.0.0"
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.11.tgz#6ee46400685f130e278128c7b38b7e031ff5b2f2"
@@ -1919,6 +1926,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+node-inspect-extracted@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/node-inspect-extracted/-/node-inspect-extracted-2.0.2.tgz#e5500e79f6bc03517175881c991f3bfaea67115a"
+  integrity sha512-8qm9+tu/GmbA/uWQRs6ad8KstyhH94a0pXpRVGHaJ9wHlJbetCYoCwXbKILaaMcE+wgbgpOpzcCnipkL8vTqxA==
 
 node-int64@^0.4.0:
   version "0.4.0"

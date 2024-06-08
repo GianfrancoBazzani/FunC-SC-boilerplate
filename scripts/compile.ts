@@ -4,7 +4,15 @@ import { Cell } from "ton-core";
 import { compileFunc } from "@ton-community/func-js";
 import {HEX_ARTIFACTS_FOLDER, SOURCE_FOLDER} from "../constants";
 
+// Sanity check
 const sourceFileName = process.argv[2];
+if (!sourceFileName) {
+  console.error("Please specify the contract that you want to compile"); 
+  process.exit(1);
+} else if (!fs.existsSync(`${SOURCE_FOLDER}/${sourceFileName}.fc`)){
+  console.error(`File, ${sourceFileName}.fc is not present in ${SOURCE_FOLDER} folder. Please check the file name and try again.`); 
+  process.exit(1);
+}
 
 async function compileScript() {
     console.log("Compiling contract: ", `${sourceFileName}.fc`);
