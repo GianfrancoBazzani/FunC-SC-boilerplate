@@ -2,9 +2,8 @@ import * as fs from "fs";
 import process from "process";
 import { Cell } from "ton-core";
 import { compileFunc } from "@ton-community/func-js";
+import {HEX_ARTIFACTS_FOLDER, SOURCE_FOLDER} from "../constants";
 
-const HEX_ARTIFACTS_FOLDER = "./build";
-const SOURCE_FOLDER = "./contracts";
 const sourceFileName = process.argv[2];
 
 async function compileScript() {
