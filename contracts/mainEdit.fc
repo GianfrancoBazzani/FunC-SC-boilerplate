@@ -1,0 +1,34 @@
+#include "imports/stdlib.fc";
+
+global int glob_total;
+global slice glob_sender_address;
+
+() load_data() impure inline_ref {
+    slice ds = get_data().begin_parse();
+    glob_sender_address = ds~load_msg_addr();
+    glob_total = ds~load_uint(32);
+}
+
+int get_sum() method_id {
+    load_data();
+    return glob_total;
+}
+
+ slice get_latest_sender_address() method_id {
+     load_data();
+     return glob_sender_address;
+ }
+
+()  recv_internal(int msg_value, cell in_msg, slice in_msg_body) impure {
+    slice cs = in_msg.begin_parse();
+    int flags = cs~load_uint(4);
+    slice sender_address = cs~load_msg_addr(); 
+    if (in_msg_body.slice_empty?()) {
+        return ();
+    }
+    load_data(); ;; caveat cells should be initialized in the deployment otherwise this will fail to load the data
+    glob_total += in_msg_body~load_uint(32);
+
+    set_data(begin_cell().store_slice(sender_address).store_uint(glob_total,32).end_cell()); 
+}
+

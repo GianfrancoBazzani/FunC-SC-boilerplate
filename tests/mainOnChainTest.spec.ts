@@ -2,7 +2,6 @@ import { Cell, toNano } from "ton-core";
 import { HEX_ARTIFACTS_FOLDER, WRAPPERS_FOLDER } from "../constants";
 import { TonClient } from "ton";
 import { getHttpEndpoint } from "@orbs-network/ton-access";
-import { Blockchain } from "@ton-community/sandbox";
 import "@ton-community/test-utils";
 
 describe("main.fc contract tests", () => {
